@@ -32,7 +32,7 @@ def get_today_emails(service):
     today = datetime.datetime.now().strftime('%Y/%m/%d')
     # query = f'after:{today}'
 
-    yesterday = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y/%m/%d')
+    yesterday = (datetime.datetime.now() - datetime.timedelta(days=1, hours=2)).strftime('%Y/%m/%d')
     query = f'after:{yesterday}'
 
     # query = f'after:{today} label:inbox'
@@ -76,4 +76,5 @@ def get_body(msg_data):
         return msg_data['snippet']
     except Exception as e:
         logger.error("[TRACE] get_body: exception: %s, returning snippet", e)
+
         return msg_data['snippet'] 
