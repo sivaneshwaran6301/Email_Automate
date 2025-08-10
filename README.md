@@ -28,6 +28,10 @@ Fetches today's Gmail emails, filters for job enquiries, and sends them to Teleg
 4. Start a chat with your bot and get your chat ID using the getUpdates API.
 5. Update `main.py` with your bot token and chat ID.
 
+
+## Json to base64
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("Path to token.json")) | Out-File -Encoding ASCII "path to store token_base64.txt"               
+
 ## Usage
 Run locally:
 ```bash
@@ -35,4 +39,6 @@ python main.py
 ```
 
 ## Deployment
+
 Deploy as a scheduled job (e.g., on Render) to run every hour. 
+
