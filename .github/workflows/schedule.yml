@@ -2,7 +2,7 @@ name: Scheduled Gmail Automate
 
 on:
   schedule:
-    # Runs at 12:00pm and 6:00pm IST (6:30am and 12:30pm UTC)
+    # Runs at 10:00 am IST 
     - cron: '30 4 * * *'
   workflow_dispatch:
 
